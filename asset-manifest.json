@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/dapp1/static/css/main.d39e5649.chunk.css",
+    "main.js": "/dapp1/static/js/main.402b921a.chunk.js",
+    "main.js.map": "/dapp1/static/js/main.402b921a.chunk.js.map",
+    "runtime-main.js": "/dapp1/static/js/runtime-main.b30e29ac.js",
+    "runtime-main.js.map": "/dapp1/static/js/runtime-main.b30e29ac.js.map",
+    "static/js/2.495afc00.chunk.js": "/dapp1/static/js/2.495afc00.chunk.js",
+    "static/js/2.495afc00.chunk.js.map": "/dapp1/static/js/2.495afc00.chunk.js.map",
+    "index.html": "/dapp1/index.html",
+    "precache-manifest.492fd13393232dfe1e404f75d90b4ff0.js": "/dapp1/precache-manifest.492fd13393232dfe1e404f75d90b4ff0.js",
+    "service-worker.js": "/dapp1/service-worker.js",
+    "static/css/main.d39e5649.chunk.css.map": "/dapp1/static/css/main.d39e5649.chunk.css.map",
+    "static/media/connected1.png": "/dapp1/static/media/connected1.d75a301a.png",
+    "static/media/eth123.png": "/dapp1/static/media/eth123.091c1c21.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b30e29ac.js",
+    "static/js/2.495afc00.chunk.js",
+    "static/css/main.d39e5649.chunk.css",
+    "static/js/main.402b921a.chunk.js"
+  ]
+}
