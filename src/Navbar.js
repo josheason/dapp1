@@ -13,7 +13,7 @@ class Navbar extends Component {
 						</small>
 
 						{ this.props.account
-							? <img src={connected} height='32' alt=""/>
+							? <img src={connected} height='30' alt=""/>
 							: <span></span>
 						}
 

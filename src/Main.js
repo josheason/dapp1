@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import BuyForm from './BuyForm'
 import SellForm from './SellForm'
+import ClaimForm from './ClaimForm'
+import LockTable from './LockTable'
 
 class Main extends Component {
 	constructor(props) {
@@ -13,11 +15,20 @@ class Main extends Component {
 	render() {
 		let content
 		if(this.state.currentForm === 'buy') {
-			content = <BuyForm
-				ethBalance={this.props.ethBalance}
-				tokenBalance={this.props.tokenBalance}
-				buyTokens={this.props.buyTokens}
-			/>
+			content = 
+			<>
+			<ClaimForm 
+				claimTokens = {this.props.claimTokens}
+				/>
+				<BuyForm
+					ethBalance={this.props.ethBalance}
+					tokenBalance={this.props.tokenBalance}
+					buyTokens={this.props.buyTokens}
+				/>
+				<LockTable
+					checkLocked = {this.props.checkLocked}
+				/>
+				</>
 		} else {
 			content = <SellForm
 				ethBalance={this.props.ethBalance}
@@ -27,7 +38,7 @@ class Main extends Component {
 		}
 
 		return (
-			<div id="nav" className="">
+			<div id="nav" className="nav1">
 
 
 

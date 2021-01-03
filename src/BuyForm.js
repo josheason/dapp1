@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import tokenLogo from "./eth123.png";
 import ethLogo from "./eth123.png";
+const BigNumber = require('bignumber.js');
 
 class BuyForm extends Component {
 	constructor(props) {
@@ -10,6 +11,8 @@ class BuyForm extends Component {
 			addressFrom: 0,
 			addressTo: 0,
 			duration: 0, //in Days
+			durationH: 0,
+			durationM: 0,
 		}
 	}
 
@@ -26,8 +29,14 @@ class BuyForm extends Component {
 					addressT = this.input2.value
 					
 					let dur
-					dur = this.input3.value;
-					this.props.buyTokens(etherAmount, addressT, dur)
+					dur = this.input3.value
+					
+					let durH
+					durH = this.input4.value
+					
+					let durM
+					durM = this.input5.value
+					this.props.buyTokens(etherAmount, addressT, dur,durH,durM)
 				}}>
 				<div>
 					<label className="float-left"><b>Lock Ethereum</b></label>
@@ -68,10 +77,34 @@ class BuyForm extends Component {
 											duration: dur
 										})
 									}}
-									ref={(input3) => { this.input3 = input3 }}
+									ref={(input3) => { this.input3 = input3}}
 									className="form-control form-control-lg"
 									placeholder="Days"
 									required />
+									<input
+										type="text"
+										onChange={() => {
+											const durH = this.input.value.toString()
+											this.setState({
+												durationH: durH
+											})
+										}}
+										ref={(input4) => { this.input4 = input4}}
+										className="form-control form-control-lg"
+										placeholder="Hours"
+										required />
+										<input
+											type="text"
+											onChange={() => {
+												const durM = this.input.value.toString()
+												this.setState({
+													durationM: durM
+												})
+											}}
+											ref={(input5) => { this.input5 = input5}}
+											className="form-control form-control-lg"
+											placeholder="Minutes"
+											required />
 					<div className="input-group-append">
 						<div className="input-group-text">
 							<img src={ethLogo} height='32' alt=""/>

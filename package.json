@@ -1,9 +1,10 @@
 {
   "homepage": "http://josheason.github.io/dapp1",
-  "name": "ETH Lock Dapp",
+  "name": "client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/helper-regex": "^7.10.5",
     "@metamask/detect-provider": "^1.2.0",
     "@metamask/legacy-web3": "^1.2.0",
     "identicon": "^3.0.1",

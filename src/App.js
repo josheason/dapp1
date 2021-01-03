@@ -6,13 +6,18 @@ import Navbar from './Navbar'
 import Main from './Main'
 import './App.css'
 import {LOCKTOKEN_TODO_LIST_ADDRESS, LOCKTOKEN_TODO_LIST_ABI,LOCK_TODO_LIST_ADDRESS,LOCK_TODO_LIST_ABI, myFunction} from './config';
+const BigNumber = require('bignumber.js');
 
 class App extends Component {
 
   async componentWillMount() {
     await this.loadWeb3()
     await this.loadBlockchainData()
+    //await this.getAssets()
+    //window.alert(this.state.id)
   }
+  
+
 
   async loadBlockchainData() {
     const web3 = window.web3
@@ -22,6 +27,7 @@ class App extends Component {
 
     const ethBalance = await web3.eth.getBalance(this.state.account)
     this.setState({ ethBalance })
+    
 
     // Load Token = LockToken
     const networkId =  await web3.eth.net.getId()
@@ -41,9 +47,13 @@ class App extends Component {
     if(ethSwapData) {
       const ethSwap = new web3.eth.Contract(EthSwap.abi, ethSwapData.address)
       this.setState({ ethSwap })
+      let id = await ethSwap.methods.getAssetIds(this.state.account).call()
+      this.setState({id: id.toString()})      
+      
     } else {
       window.alert('EthSwap contract not deployed to detected network.A')
     }
+    
     this.setState({ loading: false })
   }
 
@@ -60,16 +70,15 @@ class App extends Component {
     }
   }
   
-  /*async buyTokensHelp(){
-    const web3 = window.web3
-    const accounts = await web3.eth.getAccounts()
-    //this.state.ethSwap.methods.lock(this.state.account)
-    
-    
-  }*/
+  
 
-  buyTokens = (etherAmount, addressT, dur) => {
-    window.alert(etherAmount + " " + this.state.account + " " + addressT + " " + dur)
+
+  buyTokens = (etherAmount, addressT, dur,durH,durM) => {
+    //const huge = BigInt(dur);
+    //dur = window.web3.utils.numberToHex(BigNumber(dur*86400));
+    dur = dur * 86400 + durH * 3600 + durM * 60
+    //window.alert(etherAmount + " " + this.state.account + " " + addressT + " " + dur)
+    //window.alert(etherAmount + " " + this.state.account + " " + addressT + " " + dur)
     this.setState({ loading: true })
     //this.state.token.methods.mint(addressT, etherAmount).send({from: addressF})
     /*this.state.ethSwap.methods.activateToken(addressF).call()*/
@@ -86,18 +95,37 @@ class App extends Component {
   //0x1168C9723ECf0EAD7e83C16c2693A9e0C794b9Db
   //0xA6c3b49D74d3566724D066E324CFa9f949f1fB6B
   
-    //this.state.ethSwap.methods.buyTokens().send({ value: etherAmount, from: this.state.account }).on('transactionHash', (hash) => {
-      //this.setState({ loading: false })
-   // })
-
-  //sellTokens = (tokenAmount) => {
-   // this.setState({ loading: true })
-   // this.state.token.methods.approve(this.state.ethSwap.address, tokenAmount).send({ from: this.state.account }).on('transactionHash', (hash) => {
-     // this.state.ethSwap.methods.sellTokens(tokenAmount).send({ from: this.state.account }).on('transactionHash', (hash) => {
-       // this.setState({ loading: false })
-      //})
-    //})
- // }
+  
+   claimTokens = (etherAmount1) => {
+      this.setState({ loading: true })
+      
+      this.state.ethSwap.methods.claim(etherAmount1).send({ from: this.state.account }).on('transactionHash', (hash) => {
+          this.setState({ loading: false })
+         })
+        //this.state.ethSwap.methods.claim(etherAmount1).call({from: this.state.account})
+        this.setState({loading: false})
+      
+      
+    }
+    
+    checkLocked = () => {
+      this.setState({loading: true})
+       /*var id = this.state.ethSwap.methods.getAssetIds(this.state.account).send({ from: this.state.account }).on('transactionHash', (hash) => {
+      this.setState({loading: false})
+      //window.alert(this.state.checkID)
+      var test = new Promise(resolve => {
+          setTimeout(() => {
+             this.setState({id})
+             window.alert(this.state.id)
+          }, 30000);
+        });
+        })*/
+        var id = this.state.ethSwap.methods.getAssetIds(this.state.account).call()
+      }
+      
+      checkID = async () => {
+        await window.alert(this.state.id)
+      }
 
   constructor(props) {
     super(props)
@@ -107,7 +135,9 @@ class App extends Component {
       ethSwap: {},
       ethBalance: '0',
       tokenBalance: '0',
-      loading: true
+      loading: true,
+      id: ["0","1","2","3","4","5","6","7"],
+      claim: '0',
     }
   }
 
@@ -121,6 +151,8 @@ class App extends Component {
         tokenBalance={this.state.tokenBalance}
         buyTokens={this.buyTokens}
         sellTokens={this.sellTokens}
+        checkLocked={this.checkLocked}
+        claimTokens={this.claimTokens}
       />
     }
 

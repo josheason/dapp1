@@ -308,3 +308,33 @@ centertitle:{
     background-color: #000000;
     color: #ffffff;
   }
+  
+  .table{
+    color: #ffffff;
+    border-color: #ffffff;
+    padding-top: 40px;
+    margin-left:25px;
+  }
+  
+  .tabletest{
+    border-width: 0px;
+    border-style: solid;
+    border-color: #000000;
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .tabletest1{
+    background-color: #f2f4f6;
+    color: #000000;
+  }
+
+  
+  .tableBod{
+    background-color: #000000;
+  }
+  
+  .nav1 {
+    padding-top: 5px;
+  }
+  
