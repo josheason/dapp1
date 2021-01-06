@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import tokenLogo from "./eth123.png";
-import ethLogo from "./eth123.png";
+import tokenLogo from "./daic1.png";
+import ethLogo from "./daic1.png";
 const BigNumber = require('bignumber.js');
 
-class BuyForm extends Component {
+class BuyFormDAIC extends Component {
 	
 
 	constructor(props) {
@@ -42,7 +42,7 @@ class BuyForm extends Component {
 					this.props.buyTokens(etherAmount, addressT, dur,durH,durM)
 				}}>
 				<div>
-					<label className="float-left"><b>Lock Ethereum</b></label>
+					<label className="float-left"><b>Lock DAI Stablecoin</b></label>
 					<span className="float-right text-muted">
 						
 					</span>
@@ -58,7 +58,7 @@ class BuyForm extends Component {
 						}}
 						ref={(input) => { this.input = input }}
 						className="inputsL"
-						placeholder="Eth Amount"
+						placeholder="Compound DAI Amount"
 						required />
 						<div className ="left">{`Beneficiary's Address:`}</div>
 							<input
@@ -148,6 +148,6 @@ class BuyForm extends Component {
 	}
 }
 
-export default BuyForm;
+export default BuyFormDAIC;
 
 //Balance: {window.web3.utils.fromWei(this.props.ethBalance, 'Ether')}

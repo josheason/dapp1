@@ -25,9 +25,9 @@ class LockTable extends Component {
 				{token: ["",""],amount: ["",""],startDate:["",""],endDate:["",""],lastLocked:["",""],beneficiary:["",""],status:["",""],amountThreshold:["",""]},
 			],
 			output: [],
-			id: ['123','456','789'],
+			id: ['123','456','789','123','456','789','123','456','789','123','456','789','123','456','789','123','456','789','123','456','789','123','456','789','123','456','789'],
 			idLength: ['72','34','86'],
-			tokenAddress: ['123','321','122','123','456','789','10','123','321','122','123','456','789','100','123','321','122','123','456','789','100'],
+			tokenAddress: ['123','321','122','123','456','789','10','123','321','122','123','456','789','100','123','321','122','123','456','789','100','122','123','456','789','100','122','123','456','789','100','122','123','456','789','100','321','122','123','456','789','10','123','321','122','123','456','789','100','123','321','122','123','456','789','100','122','123','456','789','100','122','123','456','789','100','122','123','456','789','100'],
 			tokenAddress2: ['123','321','122'],
 			tokenAddress3: ['123','321','122'],
 			tokenAddress4: ['123','321','122'],
@@ -77,12 +77,12 @@ class LockTable extends Component {
 				this.setState({id: id}) 
 				let len = id.length;
 				var newState = {};
-				for(var i = 0; i < len; i++){
-					newState[i] = await ethSwap.methods.getLockedAsset(id[i]).call()
-					if(newState[i][6] == 2)
-						newState[i][7] = "Yes"
+				for(var i1 = 0; i1 < len; i1++){
+					newState[i1] = await ethSwap.methods.getLockedAsset(id[i1]).call()
+					if(newState[i1][6] == 2)
+						newState[i1][7] = "Yes"
 					else{
-						newState[i][7] = "No"
+						newState[i1][7] = "No"
 					}
 				}
 				this.setState({tokenAddress: newState});
@@ -157,38 +157,38 @@ class LockTable extends Component {
 		toEth(am){
 			am = window.web3.utils.fromWei(am, 'Ether')
 			am = am.toString()
-			am = parseFloat(am).toFixed(5)
+			am = parseFloat(am).toFixed(3)
 			return am;
 		}
 				
 	
 	render(){
 	return(
-		<div className = "Table">
+		<div >
 		<form className="forms" onSubmit={(event) => {
 				event.preventDefault()
 				this.props.checkLocked()
 			}}>
-			<ReactBootStrap.Table striped bordered hover variant ="dark">
+			<ReactBootStrap.Table striped borderless hover variant ="dark" className = "Table">
 				<thead>
 					<tr>
-						<th className="tabletest1">ID</th>
-						<th className="tabletest1">Date Locked</th>
-						<th className="tabletest1">Date Can Be Unlocked</th>
-						<th className="tabletest1">Amount</th>
-						<th className="tabletest1">Type</th>
-						<th className="tabletest1">Claimed?</th>
+						<th className="tabletestHE3"><div className="tryThis">{"ID"}</div></th>
+						<th className="tabletestHE3"><div className="tryThis">{"Date Locked"}</div></th>
+						<th className="tabletestHE3"><div className="tryThis">{"Date Can Be Unlocked"}</div></th>
+						<th className="tabletestHE"><div className="tryThis">{"Amount"}</div></th>
+						<th className="tabletestHE"><div className="tryThis">{"Type"}</div></th>
+						<th className="tabletestHE"><div className="tryThis">{"Claimed?"}</div></th>
 					</tr>
 				</thead>
 				<tbody>{
 				this.state.id.map((item, index) => (
 							<tr key={index}>
-								<td className="tabletest">{this.state.id[index]}</td>
-								<td className="tabletest">{this.toDate(this.state.tokenAddress[index][2])}</td>
-								<td className="tabletest">{this.toDate(this.state.tokenAddress[index][3])}</td>
-								<td className="tabletest">{this.toEth(this.state.tokenAddress[index][1])}</td>
-								<td className="tabletest">{this.isEth(this.state.tokenAddress[index][0])}</td>	
-								<td className="tabletest">{this.state.tokenAddress[index][7]}</td>			
+								<td className="tabletestHE3"><div className="tryThis">{this.state.id[index]}</div></td>
+								<td className="tabletestH"><div className="tryThis">{this.toDate(this.state.tokenAddress[index][2])}</div></td>
+								<td className="tabletestH"><div className="tryThis">{this.toDate(this.state.tokenAddress[index][3])}</div></td>
+								<td className="tabletestHE3"><div className="tryThis">{this.toEth(this.state.tokenAddress[index][1])}</div></td>
+								<td className="tabletestH"><div className="tryThis">{this.isEth(this.state.tokenAddress[index][0])}</div></td>
+								<td className="tabletestH"><div className="tryThis">{this.state.tokenAddress[index][7]}</div></td>			
 							</tr>
 					))
 				}

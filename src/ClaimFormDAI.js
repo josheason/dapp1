@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import tokenLogo from "./eth123.png";
-import ethLogo from "./eth123.png";
+import ethLogo from "./dai1.png";
 
-class ClaimForm extends Component {
+class ClaimFormDAI extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -21,7 +20,7 @@ class ClaimForm extends Component {
 					this.props.claimTokens(etherAmount1)
 				}}>
 				<div>
-					<label className="float-left"><b>Unlock Ethereum</b></label>
+					<label className="float-left"><b>Unlock DAI Stablecoin</b></label>
 					<span className="float-right text-muted">
 						
 					</span>
@@ -36,7 +35,7 @@ class ClaimForm extends Component {
 							})
 						}}
 						ref={(input) => { this.input = input }}
-						className="form-control form-control-lg"
+						className="inputsL"
 						placeholder="ID"
 						required />
 					<div className="input-group-append">
@@ -77,6 +76,6 @@ class ClaimForm extends Component {
 	}
 }
 
-export default ClaimForm;
+export default ClaimFormDAI;
 
 //Balance: {window.web3.utils.fromWei(this.props.ethBalance, 'Ether')}

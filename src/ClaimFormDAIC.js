@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import tokenLogo from "./eth123.png";
 import ethLogo from "./eth123.png";
 
 class ClaimForm extends Component {
@@ -36,7 +35,7 @@ class ClaimForm extends Component {
 							})
 						}}
 						ref={(input) => { this.input = input }}
-						className="form-control form-control-lg"
+						className="inputsL"
 						placeholder="ID"
 						required />
 					<div className="input-group-append">

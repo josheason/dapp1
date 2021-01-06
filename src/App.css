@@ -18,13 +18,16 @@
 
 .button {
   margin-top: 10px;
-  background-color: #00FF00;
-  height: 25px;
+  background-color: #6B8E23;
+  height: 50px;
   width: 200px;
   border-color: #ffffff;
   border-style: solid;
   margin-bottom: 10px;
-  border-radius: 10px;
+  border-radius: 40px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #ffffff;
 }
 
 .disappear{
@@ -33,7 +36,13 @@
 
 .forms{
   margin-top: 10px;
+  padding-bottom: 20px;
 }
+
+.Table {
+  margin-top: 100px;
+}
+
 .template{
   background-color: #f2f4f6;
 }
@@ -83,6 +92,19 @@
   background-color: #ffffff;
   margin-right: 75px;
   margin-top: 10px;
+}
+
+.column1a {
+  float: right;
+  width: 35%;
+  text-align: center;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: #000000;
+  border-width: 1px;
+  background-color: #ffffff;
+  margin-right: 75px;
+  margin-top: -160px;
 }
 
 .column12 {
@@ -295,7 +317,7 @@ centertitle:{
     color: white;
   }
   
-  .mb-3 {
+  .mb-3 { 
     background-color: #000000;
     color: #ffffff;
   }
@@ -310,23 +332,35 @@ centertitle:{
   }
   
   .table{
-    color: #ffffff;
+    color: #000000;
     border-color: #ffffff;
     padding-top: 40px;
-    margin-left:25px;
+    margin-left: 0px;
   }
   
   .tabletest{
-    border-width: 0px;
+    border-width: 1px;
     border-style: solid;
-    border-color: #000000;
+    border-color: #ffffff;
+    background-color: #ffffff;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    color: #000000;
+  }
+  
+  
+
+  
+  
+  
+  .tabletest1{
     background-color: #ffffff;
     color: #000000;
   }
   
-  .tabletest1{
-    background-color: #f2f4f6;
-    color: #000000;
+  .spacer{
+    width: 10%;
   }
 
   
@@ -338,3 +372,232 @@ centertitle:{
     padding-top: 5px;
   }
   
+  .imageDash{
+    flex: center;
+    margin: 10px;
+    text-decoration: none;
+  }
+  
+  .imageDash1{
+    flex: center;
+    margin: 10px;
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  .tokName{
+    display: flex;
+    justifyContent: center;
+    alignItems: center;
+  }
+  
+  .button1 {
+    text-decoration: none;
+    /*margin-top: 10px;
+    background-color: #ffffff;
+    height: 25px;
+    width: 200px;
+    border-color: #ffffff;
+    border-style: solid;
+    margin-bottom: 10px;
+    border-radius: 10px;*/
+  }
+  
+  .backColor {
+    background-color: #f5f7fa;
+  }
+  
+  /*
+  Maybe use for other screens
+  .homeScreen {
+    background-color: #f2f4f6;
+    height: 1000px;
+    max-width: 70%;
+    margin: auto;
+    margin-top: -10px;
+    /*position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }*/
+  
+  
+  .homeScreen {
+    background-color: #ffffff;
+    height: 1000px;
+    max-width: 70%;
+    margin: auto;
+    margin-top: -10px;
+    /*position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);*/
+
+  }
+  
+  .homeScreen1 {
+    background-color: #f2f4f6;
+    max-height: 10000px;
+    max-width: 70%;
+    margin: auto;
+    margin-top: 0px;
+    /*position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);*/
+
+  }
+  
+  .hope{
+      background-color: #f2f4f6;
+      max-height: 10000px;
+      max-width: 80%;
+      margin-top: 0px;
+      margin-left: 60px;
+      /*position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);*/
+  }
+
+  
+  .nav {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
+  .logoBar{
+    background-color: #141414;
+    color: #ffffff;
+    width: 100%;
+    top: 0;
+    padding: 85px 0;
+  }
+  
+  .table1{
+    color: #ffffff;
+    border-color: #ffffff;
+    padding-top: 40px;
+    width: 100%;
+  }
+  
+  .tabletestH{
+    color: #000000;
+    width: 30%;
+    text-align: center;
+  }
+  
+  .tabletestH1{
+    color: #000000;
+    width: 30%;
+  }
+  
+  .tabletestHe{
+    color: #000000;
+    width: 30%;
+    align-items: center
+  }
+  .tabletestHe3{
+    color: #000000;
+    width: 30%;
+    align-items: center
+  }
+  
+  .tabletestHead {
+    border-color: #e7e7e7;
+    border-style: solid;
+    border-width: 1px;
+  }
+  
+  .tryThis {
+    max-width: 50%;
+    align-content: center;
+    align-text: center;
+    border-color: #e7e7e7;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+  }
+  
+  .tryThis {
+    max-width: 50%;
+    margin: auto;
+    border-color: #e7e7e7;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 10px;
+  }
+  
+  .tryThis1 {
+    max-width: 50%;
+    margin: auto;
+    border-color: #e7e7e7;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .tryThisT {
+    max-width: 50%;
+    color: #000000;
+    margin: auto;
+    border-color: #000000;
+    border-style: solid;
+    border-width: 0px;
+  }
+  
+  .tableD {
+    align-self: center;
+    width: 85%;
+    flex: width;
+    border-spacing: 0px;
+  }
+  
+  
+  .borderTab {
+    border-color: #000000;
+    border-width: 1px;
+    border-style: solid;
+  }
+  
+  .accHeader {
+    float: right;
+  }
+  
+  .lil {
+    border-style: solid;
+    border-width: 0px;
+    border-color: #0000000;
+    border-radius: 8px;
+    background-color: #464646;
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+  
+  .logoHead{
+    float: top;
+    margin-left: 25px;
+  }
+  
+  .inputsL{
+    border-radius: 10px;
+    margin-top: 5px;
+    border-color: #f2f4f6;
+  }
+  
+  .backBut {
+     position:absolute;
+      width:69.5%;
+      height:35px;
+      background:#464646;
+      top:225px;
+      right:50%;
+      left:27.75%;
+      margin-left:-150px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      border-style: solid;
+      border-color: #464646;
+  }

@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import tokenLogo from "./eth123.png";
-import ethLogo from "./eth123.png";
+import ethLogo from "./daic1.png";
 
-class ClaimForm extends Component {
+class ApproveFormDAIC extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -12,16 +11,17 @@ class ClaimForm extends Component {
 
 	render() {
 		return (
-		<div className = "column1">
+		<div className = "column1a">
 			<form className="forms" onSubmit={(event,event1,event2,event3) => {
 					event.preventDefault()
-					let etherAmount1
-					etherAmount1 = this.input.value
+					let etherAmount12
+					etherAmount12 = this.input.value.toString()
+					etherAmount12 = window.web3.utils.toWei(etherAmount12, 'Ether')
 			
-					this.props.claimTokens(etherAmount1)
+					this.props.approveTokens(etherAmount12)
 				}}>
 				<div>
-					<label className="float-left"><b>Unlock Ethereum</b></label>
+					<label className="float-left"><b>Approve Compound DAI</b></label>
 					<span className="float-right text-muted">
 						
 					</span>
@@ -30,14 +30,14 @@ class ClaimForm extends Component {
 					<input
 						type="text"
 						onChange={(event) => {
-							const etherAmount1 = this.input.value.toString()
+							const etherAmount12 = this.input.value.toString()
 							this.setState({
-								output: etherAmount1
+								output: etherAmount12
 							})
 						}}
 						ref={(input) => { this.input = input }}
-						className="form-control form-control-lg"
-						placeholder="ID"
+						className="inputsL"
+						placeholder="Compound DAI Amount"
 						required />
 					<div className="input-group-append">
 						<div className="input-group-text">
@@ -47,7 +47,7 @@ class ClaimForm extends Component {
 					</div>
 				</div>
 				<div>
-					<label className="float-left"><b>Unlocking:</b></label>
+					<label className="float-left"><b>Approving:</b></label>
 					<span className="float-right text-muted">
 					</span>
 				</div>
@@ -70,13 +70,13 @@ class ClaimForm extends Component {
 					<span className="float-left text-muted"></span>
 					<span className="float-right text-muted"></span>
 				</div>
-				<button type="submit" className="button">Unlock</button>
+				<button type="submit" className="button">Approve</button>
 			</form>
 			</div>
 		);
 	}
 }
 
-export default ClaimForm;
+export default ApproveFormDAIC;
 
 //Balance: {window.web3.utils.fromWei(this.props.ethBalance, 'Ether')}

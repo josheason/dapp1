@@ -3,6 +3,7 @@ import tokenLogo from "./eth.png";
 import ethLogo from "./eth.png";
 
 class BuyForm extends Component {
+	
 	constructor(props) {
 		super(props)
 		this.state = {
